@@ -12,14 +12,18 @@
 	<![endif]-->
 
 	{% if no_processingnodes %}
-		<h3>{% trans 'Welcome!' %} ☺</h3>
-		{% trans 'Add a Processing Node' as add_processing_node %}
-		{% with nodeodm_link='<a href="https://github.com/OpenDroneMap/NodeODM" target="_blank">NodeODM</a>' api_link='<a href="https://github.com/OpenDroneMap/NodeODM/blob/master/docs/index.adoc" target="_blank">API</a>' %}
+<!--{% trans 'Welcome!' %} ☺-->
+		<h3>{% blocktrans with user=user.username %}Hello, {{ user }}! Below are your current projects. Click on View Map for seeing the data.{% endblocktrans %} </h3>
+<!--		{% trans 'Add a Processing Node' as add_processing_node %}-->
+<!--		{% with nodeodm_link='<a href="https://github.com/OpenDroneMap/NodeODM" target="_blank">NodeODM</a>' api_link='<a href="https://github.com/OpenDroneMap/NodeODM/blob/master/docs/index.adoc" target="_blank">API</a>' %}-->
 			<p>
-			{% blocktrans %}To get started, "{{ add_processing_node }}". A processing node is a computer running an instance of {{ nodeodm_link }} or some other software implementing this {{ api_link }}.{% endblocktrans %}
+			Need Support? Reach out to our <a href = mailto:info@abovesensing.ca>Support Team (info@abovesensing.ca)</a> email and either Santiago or Vadim will reach out to you.
+			</p>
+			<p>
+				Looking to find out more about Above Sensing? Click the button below to go to our website.
 			</p>
 		{% endwith %}
-		<button class="btn btn-primary" onclick="location.href='{% url "admin:nodeodm_processingnode_add" %}';"><i class="fa fa-plus-circle"></i> {{ add_processing_node }}</button>
+		<button class="btn btn-primary" onclick="location.href= www.abovesensing.ca"><i class="fa fa-plus-circle"></i> Who are we?</button>
 		
 	{% else %}
 		
